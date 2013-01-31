@@ -4,14 +4,15 @@ class Copyman
 
   def initialize
     current = Dir.getwd
-    puts "[current Dir]"
-    printf " -> %s\n", current
+    printf "[current directory] %s\n", current
   end
 
   def findAndCopy
-    puts "[enter FullPath dir, file and dest directory]"
+    printf("Directory -> ")
     findDir  = gets.chomp
+    printf("Name -> ")
     fileName = gets.chomp
+    printf("Dest directory -> ")
     destDir  = gets.chomp
     target   = findDir + "/**/" + fileName
 
@@ -21,7 +22,7 @@ class Copyman
     printf " target -> %s\n", target
     printf " copy %s -> %s \n",target,destDir
 
-    puts "ok? enter yes or no"
+    printf("ok? enter yes or no -> ")
     yon = gets.chomp
 
     if yon == "yes" then
